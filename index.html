@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -61,8 +61,25 @@
             color: #e60000;
         }
 
+        .cctv-image {
+            width: 100%;
+            text-align: center;
+            padding: 80px 20px 20px;
+            background: #fff;
+            position: relative;
+            top: 80px; /* Adjust for fixed header */
+        }
+
+        .cctv-image img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
         .hero {
-            height: 100vh;
+            height: calc(100vh - 80px); /* Adjust for fixed header and cctv image */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -190,7 +207,8 @@
         .contact-form {
             max-width: 600px;
             text-align: center;
-            margin: 0 auto;        }
+            margin: 0 auto;
+        }
 
         .contact-form h3 {
             color: #e60000;
@@ -203,12 +221,12 @@
             text-align: left;
         }
 
-        .contact-form input, .form-group textarea {
+        .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            font-size: Arial, 16px;
+            font-size: 16px;
         }
 
         .contact-form button {
@@ -231,6 +249,15 @@
             color: #fff;
             text-align: center;
             padding: 20px 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes fadeInUp {
@@ -271,12 +298,16 @@
             nav .logo {
                 font-size: 20px;
             }
+
+            .cctv-image img {
+                max-width: 200px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav class="container">
+        <nav>
             <div class="logo">Ubiquiti Installation Pros</div>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -286,6 +317,10 @@
             </ul>
         </nav>
     </header>
+
+    <section class="cctv-image">
+        <img src="https://images.unsplash.com/photo-1628535479591-c1b0b3e1b2b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CCTV Camera">
+    </section>
 
     <section id="hero" class="hero">
         <h1>Ubiquiti Security Cameras & Antennas Installation</h1>
@@ -305,13 +340,11 @@
                 <i class="fas fa-wifi"></i>
                 <h3>IP Camera Setup</h3>
                 <p>Professional setup of Ubiquiti IP cameras with advanced features like remote access and high-definition video.</p>
-                </div>
-            <div>
+            </div>
             <div class="service-card">
                 <i class="fas fa-antenna"></i>
                 <h3>Antenna Installation</h3>
                 <p>High-quality installation of Ubiquiti antennas for reliable wireless connectivity and network performance.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -321,20 +354,19 @@
         <div class="faq-item">
             <h3>What types of Ubiquiti cameras do you install?</h3>
             <p class="answer">We install all Ubiquiti security cameras, including UniFi Protect G4, G5, and Pro models, tailored to your needs.</p>
-            </div>
-            <div class="faq-item">
-                <h3>How long does a typical installation take?</h3>
-                <p class="answer">Installation time varies, but most residential setups take 2-6 hours, while commercial projects may take a day or more.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Do you provide maintenance services?</h3>
-                    <p class="answer">Yes, we offer maintenance and support for all installed Ubiquiti cameras and antennas to ensure long-term performance.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Can I view my cameras remotely?</h3>
-                        <p class="answer">Absolutely! We configure your Ubiquiti cameras for remote access via the UniFi Protect app or web interface.</p>
-                        </div>
-                    </div>
+        </div>
+        <div class="faq-item">
+            <h3>How long does a typical installation take?</h3>
+            <p class="answer">Installation time varies, but most residential setups take 2-6 hours, while commercial projects may take a day or more.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Do you provide maintenance services?</h3>
+            <p class="answer">Yes, we offer maintenance and support for all installed Ubiquiti cameras and antennas to ensure long-term performance.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can I view my cameras remotely?</h3>
+            <p class="answer">Absolutely! We configure your Ubiquiti cameras for remote access via the UniFi Protect app or web interface.</p>
+        </div>
     </section>
 
     <section id="contact">
@@ -344,23 +376,23 @@
             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Your Phone Number">
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                                </div>
-                                <button type="submit">Submit</button>
-                            </form>
-                        </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Your Phone Number">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Ubiquiti Installation Pros. All rights reserved.</p>
+        <p>© 2025 Ubiquiti Installation Pros. All rights reserved.</p>
     </footer>
 
     <script>
